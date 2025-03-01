@@ -33,6 +33,7 @@ function App() {
 			} else {
 				positions.current.delete(message.id);
 				setCounter((c) => (c > 0 ? c - 1 : 0));
+				setCounter((c) => (c > 0 ? c - 1 : 0));
 			}
 		},
 	});
@@ -60,10 +61,13 @@ function App() {
 			theta: 0,
 			dark: 1,
 			diffuse: 0.8,
+			diffuse: 0.8,
 			scale: 1.0,
 			mapSamples: 16000,
 			mapBrightness: 6,
 			baseColor: [0.3, 0.3, 0.3],
+			markerColor: [0.1, 0.8, 1],
+			glowColor: [1, 1, 1],
 			markerColor: [0.1, 0.8, 1],
 			glowColor: [1, 1, 1],
 			markers: [],
@@ -71,6 +75,7 @@ function App() {
 			onRender: (state) => {
 				state.markers = [...positions.current.values()];
 				state.phi = phi;
+				phi += 0.002;
 				phi += 0.002;
 			},
 		});
