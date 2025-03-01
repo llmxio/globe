@@ -57,8 +57,8 @@ function App() {
 
 		const globe = createGlobe(canvasRef.current as HTMLCanvasElement, {
 			devicePixelRatio: 2,
-			width: 512 * 2,
-			height: 512 * 2,
+			width: 800 * 2,
+			height: 800 * 2,
 			phi: 0,
 			theta: 0,
 			dark: 1,
@@ -80,7 +80,7 @@ function App() {
 
 				// Rotate the globe
 				state.phi = phi;
-				phi += 0.01;
+				phi += 0.001;
 			},
 		});
 
@@ -101,7 +101,7 @@ function App() {
 			)}
 
 			{/* The canvas where we'll render the globe */}
-			<canvas ref={canvasRef as LegacyRef<HTMLCanvasElement>} style={{ width: 512, height: 512, maxWidth: '100%', aspectRatio: 1 }} />
+			<canvas ref={canvasRef as LegacyRef<HTMLCanvasElement>} style={{ width: 800, height: 800, maxWidth: '100%', aspectRatio: 1 }} />
 
 			{/* Let's give some credit */}
 			{/* <p>
