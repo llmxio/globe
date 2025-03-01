@@ -29,9 +29,9 @@
     "wrangler": "^3.111.0"
   },
   "scripts": {
-    "check": "tsc --project src/client && tsc --project src/server && wrangler --experimental-json-config deploy --dry-run",
-    "deploy": "wrangler --experimental-json-config deploy",
-    "dev": "wrangler --experimental-json-config dev",
-    "types": "wrangler --experimental-json-config types ./src/server/worker-configuration.d.ts"
+    "check": "tsc --project src/client && tsc --project src/server && wrangler deploy --dry-run",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "types": "wrangler types ./src/server/worker-configuration.d.ts"
   }
 }

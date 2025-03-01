@@ -5,7 +5,7 @@
       "type": "npm",
       "script": "check",
       "label": "npm: check",
-      "detail": "tsc --project src/client && tsc --project src/server && wrangler --experimental-json-config deploy --dry-run",
+      "detail": "tsc --project src/client && tsc --project src/server && wrangler --dry-run",
       "problemMatcher": [
         "$tsc"
       ],
@@ -18,14 +18,14 @@
       "type": "npm",
       "script": "deploy",
       "label": "npm: deploy",
-      "detail": "wrangler --experimental-json-config deploy",
+      "detail": "wrangler deploy",
       "problemMatcher": []
     },
     {
       "type": "npm",
       "script": "dev",
       "label": "npm: dev",
-      "detail": "wrangler --experimental-json-config dev",
+      "detail": "wrangler dev",
       "isBackground": true,
       "problemMatcher": [
         "$tsc"
@@ -33,14 +33,18 @@
       "group": {
         "kind": "build",
         "isDefault": true
-      }
+      },
+      "dependsOn": [
+        "npm: types"
+      ]
     },
     {
       "type": "npm",
       "script": "types",
       "label": "npm: types",
-      "detail": "wrangler --experimental-json-config types ./src/server/worker-configuration.d.ts",
-      "problemMatcher": []
+      "detail": "wrangler ./src/server/worker-configuration.d.ts",
+      "problemMatcher": [],
+      "hide": true
     }
   ]
 }
