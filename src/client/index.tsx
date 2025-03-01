@@ -93,6 +93,7 @@ function App() {
 			}}
 		>
 			{/* The canvas where we'll render the globe */}
+
 			<canvas
 				ref={canvasRef}
 				style={{
@@ -103,6 +104,7 @@ function App() {
 					aspectRatio: '1',
 				}}
 			/>
+			{counter !== 0 ? <p>population: {counter}</p> : <p>&nbsp;</p>}
 		</div>
 	);
 }
