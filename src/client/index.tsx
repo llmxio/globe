@@ -7,7 +7,6 @@ import usePartySocket from 'partysocket/react';
 
 // The type of messages we'll be receiving from the server
 import type { OutgoingMessage } from '../shared';
-import type { LegacyRef } from 'react';
 
 function App() {
 	// A reference to the canvas element where we'll render the globe
@@ -50,6 +49,18 @@ function App() {
 		},
 	});
 
+	const [dimensions, setDimensions] = useState({ width: 1200, height: 1200 });
+
+	useEffect(() => {
+		function handleResize() {
+			const size = Math.min(window.innerWidth, 600);
+			setDimensions({ width: size * 2, height: size * 2 });
+		}
+		handleResize();
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
 	useEffect(() => {
 		// The angle of rotation of the globe
 		// We'll update this on every frame to make the globe spin
@@ -57,12 +68,12 @@ function App() {
 
 		const globe = createGlobe(canvasRef.current as HTMLCanvasElement, {
 			devicePixelRatio: 2,
-			width: 800 * 2,
-			height: 800 * 2,
+			width: dimensions.width,
+			height: dimensions.height,
 			phi: 0,
 			theta: 0,
 			dark: 1,
-			diffuse: 0.8,
+			diffuse: 1.0,
 			scale: 1.0,
 			mapSamples: 16000,
 			mapBrightness: 6,
@@ -87,11 +98,10 @@ function App() {
 		return () => {
 			globe.destroy();
 		};
-	}, []);
+	}, [dimensions]);
 
 	return (
-		<div className="App">
-			<h1>Uniques?</h1>
+		<div className="App" style={{ textAlign: 'center' }}>
 			{counter !== 0 ? (
 				<p>
 					<b>{counter}</b> {counter === 1 ? 'person' : 'people'} connected.
@@ -101,7 +111,16 @@ function App() {
 			)}
 
 			{/* The canvas where we'll render the globe */}
-			<canvas ref={canvasRef as LegacyRef<HTMLCanvasElement>} style={{ width: 800, height: 800, maxWidth: '100%', aspectRatio: 1 }} />
+			<canvas
+				ref={canvasRef}
+				style={{
+					display: 'block',
+					margin: '0 auto',
+					width: '100%',
+					maxWidth: 600,
+					aspectRatio: '1',
+				}}
+			/>
 
 			{/* Let's give some credit */}
 			{/* <p>
