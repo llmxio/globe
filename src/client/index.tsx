@@ -33,6 +33,7 @@ function App() {
 			} else {
 				positions.current.delete(message.id);
 				setCounter((c) => (c > 0 ? c - 1 : 0));
+				setCounter((c) => (c > 0 ? c - 1 : 0));
 			}
 		},
 	});
@@ -72,6 +73,7 @@ function App() {
 				state.markers = [...positions.current.values()];
 				state.phi = phi;
 				phi += 0.002;
+				phi += 0.002;
 			},
 		});
 
@@ -81,8 +83,19 @@ function App() {
 	}, [dimensions]);
 
 	return (
-		<div className="App" style={{ textAlign: 'center' }}>
+		<div
+			className="App"
+			style={{
+				textAlign: 'center',
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'center',
+				justifyContent: 'center',
+				minHeight: '100vh',
+			}}
+		>
 			{/* The canvas where we'll render the globe */}
+
 			<canvas
 				ref={canvasRef}
 				style={{
@@ -93,6 +106,7 @@ function App() {
 					aspectRatio: '1',
 				}}
 			/>
+			{counter !== 0 ? <p>population: {counter}</p> : <p>&nbsp;</p>}
 		</div>
 	);
 }
