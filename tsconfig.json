@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": ["esnext"],
+    "lib": [
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "bundler",
     "noEmit": true,
@@ -10,8 +12,10 @@
     "skipLibCheck": true,
     "strict": true,
     "types": [
-        "@cloudflare/workers-types/2023-07-01"
+      "@cloudflare/workers-types/2023-07-01"
     ]
   },
-  "include": ["src/shared.ts"]
+  "include": [
+    "src/shared.ts"
+  ]
 }
