@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: 22
 
+      - name: Install CF Wrangler
+        run: npm install wrangler
+
       - name: Generate types
         run: npm run types
 
