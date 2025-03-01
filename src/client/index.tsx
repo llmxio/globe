@@ -81,7 +81,17 @@ function App() {
 	}, [dimensions]);
 
 	return (
-		<div className="App" style={{ textAlign: 'center' }}>
+		<div
+			className="App"
+			style={{
+				textAlign: 'center',
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'center',
+				justifyContent: 'center',
+				minHeight: '100vh',
+			}}
+		>
 			{/* The canvas where we'll render the globe */}
 			<canvas
 				ref={canvasRef}
