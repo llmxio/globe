@@ -18,12 +18,12 @@
     "partyserver": "0.0.64",
     "partysocket": "1.0.2",
     "react": "19.0.0",
-    "react-dom": "18.3.1"
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250224.0",
     "@types/react": "19.0.10",
-    "@types/react-dom": "18.3.1",
+    "@types/react-dom": "19.0.4",
     "esbuild": "0.24.0",
     "typescript": "5.8.2",
     "wrangler": "^3.111.0"
