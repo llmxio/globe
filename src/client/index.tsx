@@ -33,7 +33,6 @@ function App() {
 			} else {
 				positions.current.delete(message.id);
 				setCounter((c) => (c > 0 ? c - 1 : 0));
-				setCounter((c) => (c > 0 ? c - 1 : 0));
 			}
 		},
 	});
