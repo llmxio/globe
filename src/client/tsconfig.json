@@ -5,7 +5,10 @@
     "lib": [
       "DOM",
       "ESNext"
-    ]
+    ],
+    "types": [
+      "node",
+    ],
   },
   "include": [
     "."
