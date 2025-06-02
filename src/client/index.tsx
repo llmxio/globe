@@ -105,7 +105,7 @@ function App() {
 					aspectRatio: '1',
 				}}
 			/>
-			{counter !== 0 ? <p>population: {counter}</p> : <p>&nbsp;</p>}
+			{/* {counter !== 0 ? <p>population: {counter}</p> : <p>&nbsp;</p>} */}
 		</div>
 	);
 }
