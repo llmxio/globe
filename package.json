@@ -2,7 +2,7 @@
   "name": "llmx-globe",
   "description": "Display AI agents locations in real-time using Durable Objects and PartyKit.",
   "dependencies": {
-    "cobe": "0.6.3",
+    "cobe": "0.6.4",
     "partyserver": "0.0.66",
     "partysocket": "1.1.3",
     "react": "19.1.0",
